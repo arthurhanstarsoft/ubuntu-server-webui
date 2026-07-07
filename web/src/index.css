@@ -1,0 +1,43 @@
+@import '@fontsource/ubuntu/400.css';
+@import '@fontsource/ubuntu/500.css';
+@import '@fontsource/ubuntu/700.css';
+@import '@fontsource/jetbrains-mono/400.css';
+@import '@fontsource/jetbrains-mono/600.css';
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: 'Ubuntu', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+
+  /* Dark charcoal with a faint aubergine cast — Ubuntu's own world, not generic near-black */
+  --color-bg0: #131017;
+  --color-bg1: #1a161f;
+  --color-bg2: #241e2b;
+  --color-line: #2e2637;
+  --color-text: #ece8f1;
+  --color-mute: #9c92a8;
+
+  --color-accent: #e95420; /* Ubuntu orange */
+  --color-accent-dim: #b8431a;
+  --color-ok: #3fb950;
+  --color-warn: #d9a13d;
+  --color-err: #f0564a;
+}
+
+html {
+  color-scheme: dark;
+}
+
+body {
+  @apply bg-bg0 text-text font-sans antialiased;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--color-accent) 40%, transparent);
+}
+
+/* Thin, quiet scrollbars that match the surface palette */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-line) transparent;
+}

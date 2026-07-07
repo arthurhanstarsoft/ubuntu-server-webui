@@ -1,0 +1,23 @@
+{
+  "name": "ubuntu-server-webui",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "shared",
+    "server",
+    "web"
+  ],
+  "scripts": {
+    "dev": "concurrently -k -n api,web -c yellow,cyan \"npm run dev -w server\" \"npm run dev -w web\"",
+    "build": "npm run build -w web && npm run build -w server",
+    "typecheck": "npm run typecheck -w server && npm run typecheck -w web",
+    "hash-password": "npm run hash-password -w server --"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  },
+  "engines": {
+    "node": ">=20.12"
+  }
+}

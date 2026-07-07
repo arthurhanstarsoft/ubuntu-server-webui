@@ -1,0 +1,10 @@
+{
+  "name": "@usw/shared",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "types": "./src/types.ts",
+  "exports": {
+    ".": "./src/types.ts"
+  }
+}
